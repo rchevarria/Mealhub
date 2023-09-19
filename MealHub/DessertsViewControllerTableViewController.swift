@@ -49,7 +49,8 @@ class DessertsViewControllerTableViewController: UIViewController, UITableViewDe
             do{
                 let decoder = JSONDecoder()
                 let mealsResponse = try decoder.decode(MealsResponse.self, from: data)
-                self?.meals = mealsResponse.meals
+                
+                self?.meals = mealsResponse.meals.sorted(by: { $0.strMeal < $1.strMeal})
                 
                 DispatchQueue.main.async{
                     completion()
