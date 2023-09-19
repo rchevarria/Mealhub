@@ -3,6 +3,7 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +11,7 @@
         <!--Desserts-->
         <scene sceneID="0ij-f5-tUo">
             <objects>
-                <tableViewController id="BBQ-ax-8dJ" customClass="DessertsViewControllerTableViewController" customModule="MealHub" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="BBQ-ax-8dJ" customClass="DessertsViewController" customModule="MealHub" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="bU3-41-GDF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,6 +46,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dessertLabel" destination="Ikb-SV-buX" id="S0q-W7-K7f"/>
+                                    <segue destination="ML2-ai-c5i" kind="show" identifier="DessertDetails" id="CDt-B7-2uj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -62,6 +64,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yQW-vh-aiE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-655" y="680"/>
+        </scene>
+        <!--Dessert Details View Controller-->
+        <scene sceneID="DWh-fC-cNL">
+            <objects>
+                <viewController id="ML2-ai-c5i" customClass="DessertDetailsViewController" customModule="MealHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OR2-fI-NTW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dessertTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gi4-51-EnG">
+                                <rect key="frame" x="186" y="114" width="89.666666666666686" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Y4w-2F-zrw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Gi4-51-EnG" firstAttribute="leading" secondItem="Y4w-2F-zrw" secondAttribute="leading" constant="186" id="9Hn-pL-sVy"/>
+                            <constraint firstItem="Gi4-51-EnG" firstAttribute="top" secondItem="Y4w-2F-zrw" secondAttribute="top" constant="26" id="G2i-Y6-CuU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LZP-Lg-6kG"/>
+                    <connections>
+                        <outlet property="dessertTitle" destination="Gi4-51-EnG" id="uuD-6Y-t91"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oYZ-UV-1CS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-659.4202898550725" y="1387.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="1c9-Sm-PIf">
