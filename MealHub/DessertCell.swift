@@ -10,6 +10,7 @@ import UIKit
 class DessertCell: UITableViewCell {
 
     @IBOutlet weak var dessertLabel: UILabel!
+    @IBOutlet weak var dessertImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

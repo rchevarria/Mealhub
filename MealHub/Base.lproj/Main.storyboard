@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Desserts-->
+        <!--Desserts Recipe Book-->
         <scene sceneID="0ij-f5-tUo">
             <objects>
                 <tableViewController id="BBQ-ax-8dJ" customClass="DessertsViewController" customModule="MealHub" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="0wO-QJ-Vgc">
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search by Dessert Name" id="0wO-QJ-Vgc">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -25,26 +25,38 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DessertCell" rowHeight="153" id="9Vq-5d-aYu" customClass="DessertCell" customModule="MealHub" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="94" width="414" height="153"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DessertCell" rowHeight="150" id="9Vq-5d-aYu" customClass="DessertCell" customModule="MealHub" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="94" width="414" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Vq-5d-aYu" id="qVR-4L-PoO" customClass="DessertCell" customModule="MealHub" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="153"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Vq-5d-aYu" id="qVR-4L-PoO">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Dessert Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikb-SV-buX">
-                                            <rect key="frame" x="117" y="66" width="109" height="21"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j4c-cs-VCi">
+                                            <rect key="frame" x="21" y="12" width="128" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="128" id="849-p1-2mS"/>
+                                                <constraint firstAttribute="width" constant="128" id="D1h-jn-HDC"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dessert Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikb-SV-buX">
+                                            <rect key="frame" x="159" y="61" width="108.33333333333331" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Ikb-SV-buX" firstAttribute="top" secondItem="qVR-4L-PoO" secondAttribute="topMargin" constant="55" id="9vT-Z0-UPK"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Ikb-SV-buX" secondAttribute="bottom" constant="55" id="v5Q-KW-oht"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Ikb-SV-buX" secondAttribute="bottom" constant="50" id="6xL-te-EcU"/>
+                                        <constraint firstItem="j4c-cs-VCi" firstAttribute="leading" secondItem="qVR-4L-PoO" secondAttribute="leadingMargin" constant="1" id="8kA-ln-asQ"/>
+                                        <constraint firstItem="Ikb-SV-buX" firstAttribute="top" secondItem="qVR-4L-PoO" secondAttribute="topMargin" constant="50" id="G7S-TM-kY3"/>
+                                        <constraint firstItem="j4c-cs-VCi" firstAttribute="bottom" secondItem="qVR-4L-PoO" secondAttribute="bottomMargin" constant="1" id="d7i-9p-iVG"/>
+                                        <constraint firstItem="j4c-cs-VCi" firstAttribute="top" secondItem="qVR-4L-PoO" secondAttribute="topMargin" constant="1" id="k1B-to-Z1K"/>
+                                        <constraint firstItem="Ikb-SV-buX" firstAttribute="leading" secondItem="j4c-cs-VCi" secondAttribute="trailing" constant="10" id="mcP-OS-2Zk"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="dessertImage" destination="j4c-cs-VCi" id="bmB-az-3sj"/>
                                     <outlet property="dessertLabel" destination="Ikb-SV-buX" id="S0q-W7-K7f"/>
                                     <segue destination="ML2-ai-c5i" kind="show" identifier="DessertDetails" id="CDt-B7-2uj"/>
                                 </connections>
@@ -55,7 +67,7 @@
                             <outlet property="delegate" destination="BBQ-ax-8dJ" id="OrZ-4B-f92"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Desserts" id="1BM-zw-YCp"/>
+                    <navigationItem key="navigationItem" title="Desserts Recipe Book" id="1BM-zw-YCp"/>
                     <connections>
                         <outlet property="dessertSearchBar" destination="0wO-QJ-Vgc" id="v0a-K7-cda"/>
                         <outlet property="tableView" destination="bU3-41-GDF" id="2Ua-Ym-h39"/>
@@ -63,7 +75,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yQW-vh-aiE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-655" y="680"/>
+            <point key="canvasLocation" x="-655.07246376811599" y="679.6875"/>
         </scene>
         <!--Dessert Details View Controller-->
         <scene sceneID="DWh-fC-cNL">

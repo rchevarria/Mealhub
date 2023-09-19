@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class DessertsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
@@ -88,7 +89,15 @@ class DessertsViewController: UIViewController, UITableViewDelegate, UITableView
         let dessert = filteredData[indexPath.row]
         cell.dessertLabel.text = dessert.strMeal
         
+        let dessertThumb = dessert.strMealThumb
+        let dessertThumbURL = URL(string: dessertThumb)!
+        cell.dessertImage.af.setImage(withURL: dessertThumbURL)
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
  
     // MARK: - Navigation
