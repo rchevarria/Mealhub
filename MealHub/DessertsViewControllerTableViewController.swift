@@ -10,13 +10,18 @@ import UIKit
 class DessertsViewControllerTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var dessertSearchBar: UISearchBar!
     
     var meals = [Meals]()
+    var filteredData = [Meals]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dessertSearchBar.delegate = self
+        
         fetchDesserts{
+            self.filteredData = self.meals
             self.tableView.reloadData()
         }
         tableView.delegate = self
@@ -56,15 +61,30 @@ class DessertsViewControllerTableViewController: UIViewController, UITableViewDe
         }.resume()
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredData = []
+        if searchText == ""{
+            filteredData = meals
+        }
+        else{
+            for meal in meals{
+                if meal.strMeal.lowercased().contains(searchText.lowercased()){
+                    filteredData.append(meal)
+                }
+            }
+        }
+        self.tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return meals.count
+        return filteredData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DessertCell", for: indexPath) as! DessertCell
-        let dessert = meals[indexPath.row]
+        let dessert = filteredData[indexPath.row]
         
         cell.dessertLabel.text = dessert.strMeal
         
