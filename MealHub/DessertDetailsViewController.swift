@@ -17,6 +17,23 @@ class DessertDetailsViewController: UIViewController {
     @IBOutlet weak var dessertImage: UIImageView!
     
     
+    @IBOutlet weak var ingredientsView: UIView!
+    @IBOutlet weak var instructionsView: UIView!
+    
+    
+    
+    
+    @IBAction func switchViews(_ sender: Any) {
+        if (sender as AnyObject).selectedSegmentIndex == 0{
+            ingredientsView.alpha = 1
+            instructionsView.alpha = 0
+        }else{
+            instructionsView.alpha = 1
+            ingredientsView.alpha = 0
+        }
+    }
+    
+    
     @IBAction func customBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
