@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class DessertDetailsViewController: UIViewController {
     
@@ -13,7 +14,12 @@ class DessertDetailsViewController: UIViewController {
     
     
     @IBOutlet weak var dessertTitle: UILabel!
+    @IBOutlet weak var dessertImage: UIImageView!
     
+    
+    @IBAction func customBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,7 +50,11 @@ class DessertDetailsViewController: UIViewController {
                 
                 if let dessert = dessertDetailsResponse.meals.first{
                     DispatchQueue.main.async{
-                        self?.dessertTitle.text = dessert.strMeal
+                        self?.dessertTitle.text = dessert.strMeal.capitalized
+                        
+                        let dessertThumb = dessert.strMealThumb
+                        let dessertThumbURL = URL(string: dessertThumb)!
+                        self?.dessertImage.af.setImage(withURL: dessertThumbURL)
                     }
                 }
             } catch {

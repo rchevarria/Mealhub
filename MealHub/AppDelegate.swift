@@ -14,7 +14,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+       
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44)
+        gradientLayer.colors = [UIColor(red: 170.0/255.0, green: 21.0/255.0, blue: 124.0/255.0, alpha: 1.0).cgColor,
+                                UIColor(red: 58.0/255.0, green: 39.0/255.0, blue: 129.0/255.0, alpha: 1.0).cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
+        
+        let gradientImage = UIImage.image(fromLayer: gradientLayer)
+        
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.backgroundImage = gradientImage
+        
+        
+        navigationBarAppearance.titleTextAttributes = [
+            .foregroundColor: UIColor.white,
+            .font: UIFont(name: "Helvetica", size: 20) ?? UIFont.systemFont(ofSize: 20)
+        ]
+        
+        // Apply the appearance to the navigation bar
+        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+        
         return true
     }
 
@@ -79,3 +102,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension UIImage {
+    static func image(fromLayer layer: CALayer) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, 0.0)
+        defer { UIGraphicsEndImageContext() }
+        guard let context = UIGraphicsGetCurrentContext() else { return UIImage() }
+        layer.render(in: context)
+        return UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
+    }
+}
