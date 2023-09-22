@@ -224,19 +224,19 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dessertImage" translatesAutoresizingMaskIntoConstraints="NO" id="lLn-T5-txr">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DessertsHub " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veL-OW-nwS">
-                                <rect key="frame" x="99" y="526" width="216" height="68"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DessertsHub " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veL-OW-nwS">
+                                <rect key="frame" x="0.0" y="526" width="414" height="68"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="42"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qad-f1-MlV">
-                                <rect key="frame" x="124" y="614" width="166" height="34.333333333333371"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qad-f1-MlV">
+                                <rect key="frame" x="124" y="614" width="166" height="32.333333333333371"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Get Started!" cornerStyle="capsule">
+                                <buttonConfiguration key="configuration" style="plain" title="Get Started!" cornerStyle="capsule" titleAlignment="center">
                                     <backgroundConfiguration key="background"/>
-                                    <fontDescription key="titleFontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                    <fontDescription key="titleFontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="getStartedButton:" destination="5rG-6s-Qfh" eventType="touchUpInside" id="ue0-cR-s4h"/>
@@ -247,15 +247,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Eil-nE-Z9s" firstAttribute="trailing" secondItem="qad-f1-MlV" secondAttribute="trailing" constant="124" id="CTf-1n-QDM"/>
-                            <constraint firstItem="veL-OW-nwS" firstAttribute="leading" secondItem="Eil-nE-Z9s" secondAttribute="leading" constant="99" id="KNP-87-BI8"/>
                             <constraint firstItem="qad-f1-MlV" firstAttribute="leading" secondItem="Eil-nE-Z9s" secondAttribute="leading" constant="124" id="MMF-Wd-eV1"/>
                             <constraint firstAttribute="bottom" secondItem="lLn-T5-txr" secondAttribute="bottom" id="PIf-Mp-EKv"/>
+                            <constraint firstItem="veL-OW-nwS" firstAttribute="top" secondItem="Eil-nE-Z9s" secondAttribute="top" constant="482" id="QSs-U8-z6e"/>
+                            <constraint firstItem="veL-OW-nwS" firstAttribute="trailing" secondItem="lLn-T5-txr" secondAttribute="trailing" id="Rdb-hF-1st"/>
                             <constraint firstItem="lLn-T5-txr" firstAttribute="trailing" secondItem="Eil-nE-Z9s" secondAttribute="trailing" id="SNV-8Y-Q4h"/>
-                            <constraint firstItem="veL-OW-nwS" firstAttribute="top" secondItem="Eil-nE-Z9s" secondAttribute="top" constant="482" id="Vtl-Mb-pKx"/>
-                            <constraint firstItem="Eil-nE-Z9s" firstAttribute="trailing" secondItem="veL-OW-nwS" secondAttribute="trailing" constant="99" id="X9g-EC-8GW"/>
-                            <constraint firstItem="qad-f1-MlV" firstAttribute="top" secondItem="veL-OW-nwS" secondAttribute="bottom" constant="20" id="qK2-Bd-foe"/>
+                            <constraint firstItem="qad-f1-MlV" firstAttribute="top" secondItem="veL-OW-nwS" secondAttribute="bottom" constant="20" id="nRD-FB-AXa"/>
                             <constraint firstItem="lLn-T5-txr" firstAttribute="leading" secondItem="Eil-nE-Z9s" secondAttribute="leading" id="uxj-Qy-NG3"/>
                             <constraint firstItem="lLn-T5-txr" firstAttribute="top" secondItem="J3C-aH-wJg" secondAttribute="top" id="y6L-Kj-WSU"/>
+                            <constraint firstItem="veL-OW-nwS" firstAttribute="leading" secondItem="lLn-T5-txr" secondAttribute="leading" id="yUT-Mb-iCf"/>
                         </constraints>
                     </view>
                     <connections>
