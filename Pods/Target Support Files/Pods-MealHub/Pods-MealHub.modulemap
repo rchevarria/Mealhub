@@ -1,5 +1,5 @@
-framework module Pods_MealHub {
-  umbrella header "Pods-MealHub-umbrella.h"
+framework module Pods_DessertsHub {
+  umbrella header "Pods-DessertsHub-umbrella.h"
 
   export *
   module * { export * }

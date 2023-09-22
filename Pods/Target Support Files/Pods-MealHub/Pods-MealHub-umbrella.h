@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_MealHubVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_MealHubVersionString[];
+FOUNDATION_EXPORT double Pods_DessertsHubVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_DessertsHubVersionString[];
 

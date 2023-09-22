@@ -1,11 +1,11 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'MealHub' do
+target 'DessertsHub' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for MealHub
+  # Pods for DessertsHub
   pod "AlamofireImage"
 
 end

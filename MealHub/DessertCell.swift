@@ -1,6 +1,6 @@
 //
 //  DessertCell.swift
-//  MealHub
+//  DessertsHub
 //
 //  Created by Ryan Chevarria on 9/18/23.
 //
@@ -10,6 +10,7 @@ import UIKit
 class DessertCell: UITableViewCell {
 
     @IBOutlet weak var dessertLabel: UILabel!
+    @IBOutlet weak var dessertImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
