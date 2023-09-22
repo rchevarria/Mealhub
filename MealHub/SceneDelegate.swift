@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  MealHub
+//  DessertsHub
 //
 //  Created by Ryan Chevarria on 9/16/23.
 //

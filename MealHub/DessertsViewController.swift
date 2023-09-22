@@ -1,6 +1,6 @@
 //
 //  DessertsViewControllerTableViewController.swift
-//  MealHub
+//  DessertsHub
 //
 //  Created by Ryan Chevarria on 9/18/23.
 //
@@ -32,7 +32,12 @@ class DessertsViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.dataSource = self
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+    }
+    
     func fetchDesserts(completed: @escaping () -> Void){
         guard let url = URL(string: "https://themealdb.com/api/json/v1/1/filter.php?c=Dessert") else{
             completed()
@@ -91,7 +96,7 @@ class DessertsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.5
     }
-        
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -115,18 +120,16 @@ class DessertsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
- 
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DessertDetails"{
             if let destination = segue.destination as? DessertDetailsViewController,
-            let indexPath = tableView.indexPathForSelectedRow{
+               let indexPath = tableView.indexPathForSelectedRow{
                 let selectedDessert = filteredData[indexPath.section]
                 destination.idMeal = selectedDessert.idMeal
             }
         }
-           
+        
     }
 }

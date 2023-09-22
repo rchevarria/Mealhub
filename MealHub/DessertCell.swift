@@ -1,6 +1,6 @@
 //
 //  DessertCell.swift
-//  MealHub
+//  DessertsHub
 //
 //  Created by Ryan Chevarria on 9/18/23.
 //
